@@ -17,11 +17,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import modelo.Numero;
+
 public class Conversor extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField numero;
+	private Numero numeros;
 
 	/**
 	 * Launch the application.
@@ -56,19 +59,19 @@ public class Conversor extends JFrame {
 		gbl_contentPane.rowWeights = new double[] { 1.0, 1.0, 1.0, Double.MIN_VALUE };
 		contentPane.setLayout(gbl_contentPane);
 
-		JPanel panel = new JPanel();
-		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 5, 5);
-		gbc_panel.fill = GridBagConstraints.BOTH;
-		gbc_panel.gridx = 1;
-		gbc_panel.gridy = 0;
-		contentPane.add(panel, gbc_panel);
-		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[] { 12, 74, 62, 0, 0 };
-		gbl_panel.rowHeights = new int[] { 11, 0 };
-		gbl_panel.columnWeights = new double[] { 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
-		gbl_panel.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
-		panel.setLayout(gbl_panel);
+		JPanel panelDecimal = new JPanel();
+		GridBagConstraints gbc_panelDecimal = new GridBagConstraints();
+		gbc_panelDecimal.insets = new Insets(0, 0, 5, 5);
+		gbc_panelDecimal.fill = GridBagConstraints.BOTH;
+		gbc_panelDecimal.gridx = 1;
+		gbc_panelDecimal.gridy = 0;
+		contentPane.add(panelDecimal, gbc_panelDecimal);
+		GridBagLayout gbl_panelDecimal = new GridBagLayout();
+		gbl_panelDecimal.columnWidths = new int[] { 12, 74, 62, 0, 0 };
+		gbl_panelDecimal.rowHeights = new int[] { 11, 0 };
+		gbl_panelDecimal.columnWeights = new double[] { 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
+		gbl_panelDecimal.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
+		panelDecimal.setLayout(gbl_panelDecimal);
 
 		JLabel lblNewLabel = new JLabel("Decimal");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -76,7 +79,7 @@ public class Conversor extends JFrame {
 		gbc_lblNewLabel.insets = new Insets(0, 0, 0, 5);
 		gbc_lblNewLabel.gridx = 1;
 		gbc_lblNewLabel.gridy = 0;
-		panel.add(lblNewLabel, gbc_lblNewLabel);
+		panelDecimal.add(lblNewLabel, gbc_lblNewLabel);
 
 		numero = new JTextField();
 		GridBagConstraints gbc_numero = new GridBagConstraints();
@@ -84,56 +87,56 @@ public class Conversor extends JFrame {
 		gbc_numero.fill = GridBagConstraints.HORIZONTAL;
 		gbc_numero.gridx = 2;
 		gbc_numero.gridy = 0;
-		panel.add(numero, gbc_numero);
+		panelDecimal.add(numero, gbc_numero);
 		numero.setColumns(10);
 
-		JPanel panel_1 = new JPanel();
-		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.insets = new Insets(0, 0, 5, 5);
-		gbc_panel_1.fill = GridBagConstraints.BOTH;
-		gbc_panel_1.gridx = 1;
-		gbc_panel_1.gridy = 1;
-		contentPane.add(panel_1, gbc_panel_1);
-		GridBagLayout gbl_panel_1 = new GridBagLayout();
-		gbl_panel_1.columnWidths = new int[] { 0, 0, 0 };
-		gbl_panel_1.rowHeights = new int[] { 0, 0, 0 };
-		gbl_panel_1.columnWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
-		gbl_panel_1.rowWeights = new double[] { 1.0, 0.0, Double.MIN_VALUE };
-		panel_1.setLayout(gbl_panel_1);
+		JPanel panelBinario = new JPanel();
+		GridBagConstraints gbc_panelBinario = new GridBagConstraints();
+		gbc_panelBinario.insets = new Insets(0, 0, 5, 5);
+		gbc_panelBinario.fill = GridBagConstraints.BOTH;
+		gbc_panelBinario.gridx = 1;
+		gbc_panelBinario.gridy = 1;
+		contentPane.add(panelBinario, gbc_panelBinario);
+		GridBagLayout gbl_panelBinario = new GridBagLayout();
+		gbl_panelBinario.columnWidths = new int[] { 0, 0, 0 };
+		gbl_panelBinario.rowHeights = new int[] { 0, 0, 0 };
+		gbl_panelBinario.columnWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
+		gbl_panelBinario.rowWeights = new double[] { 1.0, 0.0, Double.MIN_VALUE };
+		panelBinario.setLayout(gbl_panelBinario);
 
 		JLabel lblNewLabel_1 = new JLabel("Binario");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 0;
 		gbc_lblNewLabel_1.gridy = 0;
-		panel_1.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		panelBinario.add(lblNewLabel_1, gbc_lblNewLabel_1);
 
 		JLabel resultado = new JLabel("");
 		GridBagConstraints gbc_resultado = new GridBagConstraints();
 		gbc_resultado.insets = new Insets(0, 0, 5, 0);
 		gbc_resultado.gridx = 1;
 		gbc_resultado.gridy = 0;
-		panel_1.add(resultado, gbc_resultado);
+		panelBinario.add(resultado, gbc_resultado);
 
-		JPanel panel_2 = new JPanel();
-		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
-		gbc_panel_2.insets = new Insets(0, 0, 0, 5);
-		gbc_panel_2.fill = GridBagConstraints.BOTH;
-		gbc_panel_2.gridx = 1;
-		gbc_panel_2.gridy = 2;
-		contentPane.add(panel_2, gbc_panel_2);
-		GridBagLayout gbl_panel_2 = new GridBagLayout();
-		gbl_panel_2.columnWidths = new int[] { 0, 0, 0, 0 };
-		gbl_panel_2.rowHeights = new int[] { 0, 0 };
-		gbl_panel_2.columnWeights = new double[] { 1.0, 1.0, 1.0, Double.MIN_VALUE };
-		gbl_panel_2.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
-		panel_2.setLayout(gbl_panel_2);
+		JPanel botonCalcular = new JPanel();
+		GridBagConstraints gbc_botonCalcular = new GridBagConstraints();
+		gbc_botonCalcular.insets = new Insets(0, 0, 0, 5);
+		gbc_botonCalcular.fill = GridBagConstraints.BOTH;
+		gbc_botonCalcular.gridx = 1;
+		gbc_botonCalcular.gridy = 2;
+		contentPane.add(botonCalcular, gbc_botonCalcular);
+		GridBagLayout gbl_botonCalcular = new GridBagLayout();
+		gbl_botonCalcular.columnWidths = new int[] { 0, 0, 0, 0 };
+		gbl_botonCalcular.rowHeights = new int[] { 0, 0 };
+		gbl_botonCalcular.columnWeights = new double[] { 1.0, 1.0, 1.0, Double.MIN_VALUE };
+		gbl_botonCalcular.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
+		botonCalcular.setLayout(gbl_botonCalcular);
 
 		JButton calcular = new JButton("Calcular");
 		calcular.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
+							
 			}
 		});
 		calcular.addActionListener(new ActionListener() {
@@ -144,7 +147,7 @@ public class Conversor extends JFrame {
 		gbc_calcular.insets = new Insets(0, 0, 0, 5);
 		gbc_calcular.gridx = 1;
 		gbc_calcular.gridy = 0;
-		panel_2.add(calcular, gbc_calcular);
+		botonCalcular.add(calcular, gbc_calcular);
 	}
 
 }
